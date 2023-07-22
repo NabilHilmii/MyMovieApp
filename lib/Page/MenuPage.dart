@@ -1,7 +1,8 @@
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:expandable_bottom_sheet/expandable_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_stopper/stopper.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mtf_project/Page/HomePage.dart';
 import 'package:mtf_project/Page/navBar.dart';
 
 class MenuPage extends StatefulWidget {
@@ -14,28 +15,6 @@ class MenuPage extends StatefulWidget {
 class _MenuPageState extends State<MenuPage> {
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
-  static final List<String> imgSlider = [
-    'film2.jpg',
-    'film1.jpg',
-  ];
-  final CarouselSlider autoPlayImage = CarouselSlider(
-      items: imgSlider.map((fileImage) {
-        return Container(
-          child: ClipRRect(
-            borderRadius: BorderRadius.all(Radius.circular(5)),
-            child: Image.asset(
-              'images/slider/${fileImage}',
-              fit: BoxFit.cover,
-            ),
-          ),
-        );
-      }).toList(),
-      options: CarouselOptions(
-        height: 150,
-        autoPlay: true,
-        enlargeCenterPage: true,
-        aspectRatio: 2.0,
-      ));
 
   @override
   Widget build(BuildContext context) {
@@ -52,14 +31,11 @@ class _MenuPageState extends State<MenuPage> {
                     height: 50,
                   ),
                   Container(
-                    child: Column(
-                      children: <Widget>[
-                        autoPlayImage,
-                      ],
-                    ),
+                    child: Image.network(
+                        "https://m.media-amazon.com/images/M/MV5BMjMwNDkxMTgzOF5BMl5BanBnXkFtZTgwNTkwNTQ3NjM@._V1_FMjpg_UX1000_.jpg"),
                   ),
                   const SizedBox(
-                    height: 120,
+                    height: 20,
                   ),
 
                   // SIGN IN
